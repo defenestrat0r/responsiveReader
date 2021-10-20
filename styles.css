@@ -51,11 +51,11 @@ body::-webkit-scrollbar-thumb { background: var(--secondary); }
 
     .sidebar
     {
-        /* viewheight scales with the viewport, so 100vh always fills top to bottom */
+        /* All it needed was to become a sub */
+        bottom: 0;
+        /* viewheight scales with the viewport, so 100vw always fills left to right of screen */
         width: 100vw;
         height: 5rem;
-        margin-top: 85vh;
-        position: fixed;
     }
     
     .logo
@@ -85,10 +85,9 @@ body::-webkit-scrollbar-thumb { background: var(--secondary); }
 
     .sidebar
     {
-        /* viewheight scales with the viewport, so 100vh always fills top to bottom */
+        /* viewheight scales with the viewport, so 100vh always fills the screen top to bottom */
         height: 100vh;
         width: 5rem;
-        position: fixed;
     }
 
     /* Expand navbar when hovered over it */
@@ -152,6 +151,7 @@ body::-webkit-scrollbar-thumb { background: var(--secondary); }
 .sidebar
 {
     grid-area: side;
+    position: fixed;
     background-color: var(--secondaryBlack);
     /* For when width increases - Expanded sidebar */
     transition: width 200ms ease;
