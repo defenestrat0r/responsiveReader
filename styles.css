@@ -77,7 +77,7 @@ body::-webkit-scrollbar-thumb { background: var(--secondary); }
         'side cont cont cont';
     }    
 
-    #pgheader
+    #chapterHead
     { margin-left: 5rem; }
 
     #content
@@ -133,7 +133,7 @@ body::-webkit-scrollbar-thumb { background: var(--secondary); }
 .container
 { display: grid; }
 
-#pgheader
+#chapterHead
 { 
     padding: 0rem 1rem 0rem;
     font-size: 3rem;
@@ -146,6 +146,8 @@ body::-webkit-scrollbar-thumb { background: var(--secondary); }
     color: var(--primaryBlack); 
     grid-area: cont;
 }
+
+#content > div { display: none; }
 
 /* Fixed navigation sidebar that stays where it is on the screen no matter how far you scroll */
 .sidebar
@@ -183,7 +185,6 @@ body::-webkit-scrollbar-thumb { background: var(--secondary); }
     transition: 600ms ease;
 }
 
-
 .navlink svg
 { 
     min-width: 1.5rem;     
@@ -197,5 +198,4 @@ body::-webkit-scrollbar-thumb { background: var(--secondary); }
     display: none; 
     font-family: 'Roboto', sans-serif;
     padding: 0.5rem;
-}
-
+}       
