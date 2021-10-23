@@ -83,29 +83,36 @@ body::-webkit-scrollbar-thumb { background: var(--secondary); }
     #content
     { margin-left: 5rem; }
 
+    /* Navbar toggle class for when closed */
     .sidebar
     {
         /* viewheight scales with the viewport, so 100vh always fills the screen top to bottom */
         height: 100vh;
         width: 5rem;
     }
-
-    /* Expand navbar when hovered over it */
-    .sidebar:hover { width: 15rem; }
-    /* Display link text when expanding navbar */
-    .sidebar:hover .linktext { display: block; }
-    /* Show off nice header and spinny arrow */
-    .sidebar:hover .logo > .navlink
+    
+    /* Navbar toggle class for when it opens */
+    
+    /* Push it out! */
+    .sidebarExtended
+    { width: 15rem; }
+    
+    /* Reveal all the link text */
+    .sidebarExtended .linktext { display: block; }
+    
+    .sidebarExtended .logo > .navlink
     { 
         color: var(--textWhite); 
         filter: grayscale(0%);
     }
-    .sidebar:hover .logo svg
+    
+    /* Arrow spinning */
+    .sidebarExtended .logo svg
     { 
         transform: rotate(-540deg);
         color: var(--secondary);
     }
-
+    
     .logo
     {
         background-color: var(--primaryBlack);
@@ -117,17 +124,13 @@ body::-webkit-scrollbar-thumb { background: var(--secondary); }
     }
 
     .logo svg
-    { 
-        transform: rotate(0deg);
-        transition: transform 600ms ease;
-    }
+    { transition: transform 600ms ease; }
 
     .navcontainer
     { flex-direction: column; }
     
     /* The last list item will be sent to bottom of screen */
     .navitem:last-child { margin-top: auto; }
-
 }
 
 .container
@@ -147,10 +150,11 @@ body::-webkit-scrollbar-thumb { background: var(--secondary); }
     grid-area: cont;
 }
 
+/* Hide all content on load, so we can manipulate using javascript */
 #content > div { display: none; }
 
 /* Fixed navigation sidebar that stays where it is on the screen no matter how far you scroll */
-.sidebar
+#sidebar
 {
     grid-area: side;
     position: fixed;
