@@ -1,9 +1,10 @@
 /* -----Variables----- */
 /* Story elements */
+const title = document.getElementById("titleScreen");
 const ch1 = document.getElementById("ch1");
 const ch2 = document.getElementById("ch2");
 const ch3 = document.getElementById("ch3");
-const chapters = [ch1, ch2, ch3];
+const chapters = [ch1, ch2, ch3, title,];
 
 /* Chapter header */
 const head = document.getElementById("chapterHead");
@@ -18,9 +19,7 @@ const ch3Btn = document.getElementById("ch3-btn");
 const dark = document.getElementById("darkMode-btn");
 
 /* -----Event Listeners----- */
-/* Page Load events */
-document.getElementById("body").addEventListener("load", header(1)); 
-document.getElementById("body").addEventListener("load", blink(ch1));
+document.body.addEventListener("load", eyeClose(head));
 
 /* Expand navbar */
 /* The toggle class function is awesome, btw. 
@@ -46,9 +45,6 @@ function eyeClose (divID)
 /* Iterates through chapters, hides unselected, displays selected */
 function blink (divID)
 {
-
-    console.log([divID]);
-
     chapters.forEach(blinkInside);
 
     /*  Apparently this is a closure! Or... has closures? */
@@ -70,6 +66,8 @@ function blink (divID)
             header(index + 1);
         }
     }
+
+    eyeOpen(head);
 }
 
 /* Come on, this can't be simpler */
@@ -82,6 +80,8 @@ function header(num)
         case 2: head.innerHTML = "Chapter 2";
         break;
         case 3: head.innerHTML = "Chapter 3";
+        break;
+        default: head.innerHTML = "";
         break;
     }
 }

@@ -134,7 +134,10 @@ body::-webkit-scrollbar-thumb { background: var(--secondary); }
 }
 
 .container
-{ display: grid; }
+{ 
+    display: grid; 
+    justify-content: stretch;
+}
 
 #chapterHead
 { 
@@ -203,3 +206,21 @@ body::-webkit-scrollbar-thumb { background: var(--secondary); }
     font-family: 'Roboto', sans-serif;
     padding: 0.5rem;
 }       
+
+#content > .titleScreenWrapper
+{
+    display: grid;
+    grid-template: auto;
+}
+
+#storyTitle
+{
+    font-size: 4rem;
+    letter-spacing: 0.2rem;
+}
+
+#storySubtTitle
+{
+    font-family: 'Nunito', sans-serif;
+    font-size: 1.2rem;
+}
