@@ -21,6 +21,7 @@ body
     margin: 0;
     padding: 0;
     font-family: 'Nunito', sans-serif;
+    transition: 0.5s ease-in;
 }
 
 .darkMode
@@ -133,6 +134,7 @@ body::-webkit-scrollbar-thumb { background: var(--primary); }
         font-size: 2rem;
         letter-spacing: 00.25rem;
         font-weight: bold;
+        transition: background-color 0.5s ease;
     }
 
     .darkMode .logo
@@ -177,6 +179,7 @@ body::-webkit-scrollbar-thumb { background: var(--primary); }
     background-color: var(--secondaryBlack);
     /* For when width increases - Expanded sidebar */
     transition: width 200ms ease;
+    transition: background-color 0.5s ease;
 }
 
 .darkMode #sidebar
