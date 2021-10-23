@@ -17,16 +17,22 @@ const ch2Btn = document.getElementById("ch2-btn");
 const ch3Btn = document.getElementById("ch3-btn");
 const dark = document.getElementById("darkMode-btn");
 
+/* Body element */
+const bod = document.body;
+
 /* -----Event Listeners----- */
 /* Page Load events */
-document.getElementById("body").addEventListener("load", header(1)); 
-document.getElementById("body").addEventListener("load", blink(ch1));
+bod.addEventListener("load", header(1)); 
+bod.addEventListener("load", blink(ch1));
 
 /* Expand navbar */
 /* The toggle class function is awesome, btw. 
 *  TODO: Use toggle for dark mode! 
 */
 document.getElementById("navExpand").addEventListener("click", function(){ navbar.classList.toggle("sidebarExtended"); });
+
+/* Dark Mode */
+dark.addEventListener("click", function(){ bod.classList.toggle("darkMode"); });
 
 /* "Load" chapters */
 /* Apparently, when you have parameters involved, wrapping it in an anonymous function is good 

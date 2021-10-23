@@ -10,9 +10,9 @@
     box-sizing: border-box;
     --primaryBlack: #1e1110;
     --secondaryBlack: #495052;
-    --secondary: #e7a2a3;
-    --primary: #e7d052; 
+    --primary: #e7a2a3; 
     --textWhite: #ffffff;
+    --primaryDark: #380d0e;
 } 
 
 /* Using all of the space on body */
@@ -22,6 +22,15 @@ body
     padding: 0;
     font-family: 'Nunito', sans-serif;
 }
+
+.darkMode
+{ 
+    background-color: var(--primaryBlack); 
+    color: var(--textWhite);
+}
+
+.darkMode div
+{ color: var(--textWhite); }
 
 h1 { font-family: 'Roboto', sans-serif; }
 
@@ -34,7 +43,7 @@ body::-webkit-scrollbar-track
     border-radius: 10px;  
     background: var(--primary); 
 }
-body::-webkit-scrollbar-thumb { background: var(--secondary); }
+body::-webkit-scrollbar-thumb { background: var(--primary); }
 
 /* Small Screens */ 
 @media only screen and (max-width:600px) 
@@ -110,8 +119,11 @@ body::-webkit-scrollbar-thumb { background: var(--secondary); }
     .sidebarExtended .logo svg
     { 
         transform: rotate(-540deg);
-        color: var(--secondary);
+        color: var(--primary);
     }
+
+    .darkMode .logo svg
+    { color: var(--primary); }
     
     .logo
     {
@@ -122,6 +134,9 @@ body::-webkit-scrollbar-thumb { background: var(--secondary); }
         letter-spacing: 00.25rem;
         font-weight: bold;
     }
+
+    .darkMode .logo
+    { background-color: var(--secondaryBlack); }
 
     .logo svg
     { transition: transform 600ms ease; }
@@ -150,6 +165,7 @@ body::-webkit-scrollbar-thumb { background: var(--secondary); }
     grid-area: cont;
 }
 
+
 /* Hide all content on load, so we can manipulate using javascript */
 #content > div { display: none; }
 
@@ -162,6 +178,9 @@ body::-webkit-scrollbar-thumb { background: var(--secondary); }
     /* For when width increases - Expanded sidebar */
     transition: width 200ms ease;
 }
+
+.darkMode #sidebar
+{ background-color: var(--primaryDark); }
 
 /* Flexbox inside the navbar to put items wherever we need to */
 .navcontainer
@@ -184,7 +203,7 @@ body::-webkit-scrollbar-thumb { background: var(--secondary); }
     justify-content: center;
     height: 5rem;
     text-decoration: none;
-    color: var(--secondary);
+    color: var(--primary);
     filter: grayscale(100%) opacity(0.7);
     transition: 600ms ease;
 }
