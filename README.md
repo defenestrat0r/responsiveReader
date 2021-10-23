@@ -7,9 +7,10 @@ The idea here is to display a short story I wrote in a webpage that is fairly re
   - Flexboxes
   - Grids
   - Media Queries 
-  - Transition Animation (using Hover states as triggers)
+  - Transition Animations
 - Pure JS
   - Change chapters when navbar buttons are pressed! (Currently just show / hide, but possible plans to make it pull from a server?)
+  - Expand navbar and change its style when clicked (Toggle function)
 # Next Up
 - Pure JS
   - > dark mode button because yes that is a thing that I also believe is a JS thing to do
