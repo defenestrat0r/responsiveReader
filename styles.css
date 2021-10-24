@@ -180,6 +180,7 @@ body::-webkit-scrollbar-thumb { background: var(--primary); }
     /* For when width increases - Expanded sidebar */
     transition: width 200ms ease;
     transition: background-color 0.5s ease;
+    overflow: auto;
 }
 
 .darkMode #sidebar
