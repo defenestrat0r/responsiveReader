@@ -14,6 +14,9 @@ The idea here is to display a short story I wrote in a webpage that is fairly re
   - Dark Mode!
   - Title page for when load instead of immediately landing on Chapter 1 (currently on a separate branch because ugly)
 # Next Up
-- Server stuff
-  - Put chapters on a server and load dynamically from there
-  - Probably have to look into AJAX and JSON formats
+- Single Page Application
+  - Load text / chapters from a markdown file (Fetch)
+  - Look into using async-await for the same
+- Remember scroll position
+- Query user preference for theme 
+- Massive white space on the right in landscape is bothering me. (I put a column there to put something there later)
