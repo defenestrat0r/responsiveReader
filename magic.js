@@ -22,8 +22,9 @@ document.addEventListener('DOMContentLoaded', () => {
     document.querySelector("#navExpand").addEventListener("click", () => { navbar.classList.toggle("sidebarExtended"); });
 
     /* Dark Mode */
-    /* TODO: Look into 'prefers-color-scheme' media query */
-    dark.addEventListener("click", () => { document.body.classList.toggle("darkMode"); });
+    dark.addEventListener("click", sepulchre);
+    /* Activates dark mode if user has it set as preferred theme */
+    if(window.matchMedia('(prefers-color-scheme: dark)').matches) { sepulchre(); }
 
     /* "Load" chapters */
     /* God I'm loving anonymous functions and loops */
@@ -72,8 +73,12 @@ document.addEventListener('DOMContentLoaded', () => {
     /* Turns out, that function *could* get simpler */
     /* header(x) passes the x value as a parameter to the rest of the func */
     const header = (num) => head.innerHTML = `Chapter ${num}`; 
+    
+    /* Dark mode utility function */
+    function sepulchre() { document.body.classList.toggle("darkMode"); }
 
     /* Calling these two when DOM finishes loading so we don't start on a blank page */
     header(1);
     blink(chapters[0]);
+    
 });
