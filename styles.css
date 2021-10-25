@@ -1,12 +1,6 @@
-/* Nunito */
-@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap');
-/* Roboto */
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
-
 /* Global Variables */
 :root
 {
-    font-size: 16px;
     box-sizing: border-box;
     --primaryBlack: #1e1110;
     --secondaryBlack: #495052;
@@ -30,8 +24,7 @@ body
     color: var(--textWhite);
 }
 
-.darkMode div
-{ color: var(--textWhite); }
+.darkMode div { color: var(--textWhite); }
 
 h1 { font-family: 'Roboto', sans-serif; }
 
@@ -68,11 +61,9 @@ body::-webkit-scrollbar-thumb { background: var(--primary); }
         height: 5rem;
     }
     
-    .logo
-    { display: none; }
+    .logo { display: none; }
 
-    .navcontainer
-    { flex-direction: row; }
+    .navcontainer { flex-direction: row; }
 
 }
 
@@ -83,15 +74,9 @@ body::-webkit-scrollbar-thumb { background: var(--primary); }
     .container
     {
         grid-template:
-        'side head head head'
-        'side cont cont cont';
-    }    
-
-    #chapterHead
-    { margin-left: 5rem; }
-
-    #content
-    { margin-left: 5rem; }
+        'side head head head col'
+        'side cont cont cont col';
+    }
 
     /* Navbar toggle class for when closed */
     .sidebar
@@ -99,13 +84,13 @@ body::-webkit-scrollbar-thumb { background: var(--primary); }
         /* viewheight scales with the viewport, so 100vh always fills the screen top to bottom */
         height: 100vh;
         width: 5rem;
+        transition: 600ms ease;
     }
     
     /* Navbar toggle class for when it opens */
     
     /* Push it out! */
-    .sidebarExtended
-    { width: 15rem; }
+    .sidebarExtended { width: 15rem; }
     
     /* Reveal all the link text */
     .sidebarExtended .linktext { display: block; }
@@ -137,27 +122,28 @@ body::-webkit-scrollbar-thumb { background: var(--primary); }
         transition: background-color 0.5s ease;
     }
 
-    .darkMode .logo
-    { background-color: var(--secondaryBlack); }
+    .darkMode .logo { background-color: var(--secondaryBlack); }
 
-    .logo svg
-    { transition: transform 600ms ease; }
+    .logo svg { transition: transform 600ms ease; }
 
-    .navcontainer
-    { flex-direction: column; }
+    .navcontainer { flex-direction: column; }
     
     /* The last list item will be sent to bottom of screen */
     .navitem:last-child { margin-top: auto; }
 }
 
-.container
-{ display: grid; }
+.container 
+{ 
+    display: grid; 
+    justify-content: center;
+}
 
 #chapterHead
 { 
     padding: 0rem 1rem 0rem;
     font-size: 3rem;
     grid-area: head; 
+    justify-self: center;
 }
 
 #content
@@ -167,9 +153,15 @@ body::-webkit-scrollbar-thumb { background: var(--primary); }
     grid-area: cont;
 }
 
-
 /* Hide all content on load, so we can manipulate using javascript */
 #content > div { display: none; }
+
+/* Restricts text to 80 characters across so it's not hard for eyes to scan on a wide monitor */
+div[id^=ch] 
+{ 
+    max-width: 90ch; 
+    font-size: 1.1rem;
+}
 
 /* Fixed navigation sidebar that stays where it is on the screen no matter how far you scroll */
 #sidebar
@@ -183,8 +175,9 @@ body::-webkit-scrollbar-thumb { background: var(--primary); }
     overflow: auto;
 }
 
-.darkMode #sidebar
-{ background-color: var(--primaryDark); }
+.darkMode #sidebar { background-color: var(--primaryDark); }
+
+#extraCol { width: 2rem; }
 
 /* Flexbox inside the navbar to put items wherever we need to */
 .navcontainer
@@ -197,8 +190,7 @@ body::-webkit-scrollbar-thumb { background: var(--primary); }
     height: 100%;
 }
 
-.navitem 
-{ width: 100%; }
+.navitem { width: 100%; }
 
 .navlink
 {
