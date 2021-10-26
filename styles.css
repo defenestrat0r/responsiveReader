@@ -190,7 +190,10 @@ div[id^=ch]
     height: 100%;
 }
 
-.navitem { width: 100%; }
+.navitem { 
+    width: 100%; 
+    font-size: 1.2rem;
+}
 
 .navlink
 {
@@ -216,5 +219,5 @@ div[id^=ch]
 { 
     display: none; 
     font-family: 'Roboto', sans-serif;
-    padding: 0.5rem;
+    padding: 1rem;
 }       
