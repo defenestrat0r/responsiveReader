@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const head = document.querySelector("#chapterHead");
     
     /* Navbar elements */
-    const navbar = document.querySelector("#sidebar");
+    const navbar = document.querySelector("#navbar");
     
     /* Button elements */
     const chButtons = [ '#ch1-btn', '#ch2-btn', '#ch3-btn',].map(i => document.querySelector(i));
@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
     /* -----Event Listeners----- */
     /* Expand navbar */
     /* The toggle class function is awesome, btw. */
-    document.querySelector("#navExpand").addEventListener("click", () => { navbar.classList.toggle("sidebarExtended"); });
+    document.querySelector("#navExpand").addEventListener("click", () => { navbar.classList.toggle("navbarExtended"); });
 
     /* Dark Mode */
     dark.addEventListener("click", sepulchre);
