@@ -1,4 +1,6 @@
 /* Global Variables */
+html { scroll-behavior: smooth; }
+
 :root
 {
     box-sizing: border-box;
