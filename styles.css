@@ -28,8 +28,6 @@ body
 
 .darkMode div { color: var(--textWhite); }
 
-h1 { font-family: 'Roboto', sans-serif; }
-
 /* Default scrollbar ugly, so we custom that bitch */
 body::-webkit-scrollbar { width: 0.25rem; }
 body::-webkit-scrollbar-track 
@@ -48,9 +46,9 @@ body::-webkit-scrollbar-thumb { background: var(--primary); }
     .container
     {
         grid-template:
-        'head head head'
-        'cont cont cont'
-        'side side side'
+        'head'
+        'cont'
+        'side'
         ;
     }
 
@@ -60,7 +58,7 @@ body::-webkit-scrollbar-thumb { background: var(--primary); }
         bottom: 0;
         /* viewheight scales with the viewport, so 100vw always fills left to right of screen */
         width: 100vw;
-        height: 5rem;
+        height: 3rem;
     }
     
     .logo { display: none; }
@@ -76,8 +74,8 @@ body::-webkit-scrollbar-thumb { background: var(--primary); }
     .container
     {
         grid-template:
-        'side head head head col'
-        'side cont cont cont col';
+        'side head col'
+        'side cont col';
     }
 
     /* Navbar toggle class for when closed */
@@ -141,12 +139,17 @@ body::-webkit-scrollbar-thumb { background: var(--primary); }
     justify-content: center;
 }
 
+#headerContainer
+{
+    grid-area: head;
+    display: flex;
+    justify-content: center;
+}
+
 #chapterHead
-{ 
-    padding: 0rem 1rem 0rem;
+{
     font-size: 3rem;
-    grid-area: head; 
-    justify-self: center;
+    font-family: 'Roboto', sans-serif;
 }
 
 #content
