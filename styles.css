@@ -39,6 +39,99 @@ body::-webkit-scrollbar-track
 }
 body::-webkit-scrollbar-thumb { background: var(--primary); }
 
+.container 
+{ 
+    display: grid; 
+    justify-content: center;
+}
+
+#headerContainer
+{
+    grid-area: head;
+    display: flex;
+    justify-content: center;
+}
+
+#chapterHead
+{
+    font-size: 3rem;
+    font-family: 'Roboto', sans-serif;
+}
+
+#content
+{
+    padding: 0rem 1rem 5rem;
+    color: var(--primaryBlack); 
+    grid-area: cont;
+}
+
+/* Hide all content on load, so we can manipulate using javascript */
+#content > div { display: none; }
+
+/* Restricts text to 80 characters across so it's not hard for eyes to scan on a wide monitor */
+div[id^=ch] 
+{ 
+    max-width: 90ch; 
+    font-size: 1.1rem;
+}
+
+/* Fixed navigation sidebar that stays where it is on the screen no matter how far you scroll */
+#navbar
+{
+    grid-area: side;
+    position: fixed;
+    background-color: var(--secondaryBlack);
+    /* For when width increases - Expanded sidebar */
+    transition: width 200ms ease;
+    transition: background-color 0.5s ease;
+    overflow: auto;
+}
+
+.darkMode #navbar { background-color: var(--primaryDark); }
+
+#extraCol { width: 2rem; }
+
+/* Flexbox inside the navbar to put items wherever we need to */
+.navcontainer
+{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+.navitem { 
+    width: 100%; 
+    font-size: 1.2rem;
+}
+
+.navlink
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 5rem;
+    text-decoration: none;
+    color: var(--primary);
+    filter: grayscale(100%) opacity(0.7);
+    transition: 600ms ease;
+}
+
+.navlink svg
+{ 
+    min-width: 1.5rem;     
+    max-width: 2rem;
+}
+
+.linktext
+{ 
+    display: none; 
+    font-family: 'Roboto', sans-serif;
+    padding: 1rem;
+}
+
 /* Small Screens */ 
 @media only screen and (max-width:1140px) 
 {
@@ -133,97 +226,9 @@ body::-webkit-scrollbar-thumb { background: var(--primary); }
     .navitem:last-child { margin-top: auto; }
 }
 
-.container 
-{ 
-    display: grid; 
-    justify-content: center;
+/* Hover only triggers for devices whose primary input is a pointer device 
+ * Aka not a touch device
+ */
+@media (hover: hover) and (pointer: fine) {
+    .navlink:hover { filter: grayscale(0%) opacity(1); }
 }
-
-#headerContainer
-{
-    grid-area: head;
-    display: flex;
-    justify-content: center;
-}
-
-#chapterHead
-{
-    font-size: 3rem;
-    font-family: 'Roboto', sans-serif;
-}
-
-#content
-{
-    padding: 0rem 1rem 5rem;
-    color: var(--primaryBlack); 
-    grid-area: cont;
-}
-
-/* Hide all content on load, so we can manipulate using javascript */
-#content > div { display: none; }
-
-/* Restricts text to 80 characters across so it's not hard for eyes to scan on a wide monitor */
-div[id^=ch] 
-{ 
-    max-width: 90ch; 
-    font-size: 1.1rem;
-}
-
-/* Fixed navigation sidebar that stays where it is on the screen no matter how far you scroll */
-#navbar
-{
-    grid-area: side;
-    position: fixed;
-    background-color: var(--secondaryBlack);
-    /* For when width increases - Expanded sidebar */
-    transition: width 200ms ease;
-    transition: background-color 0.5s ease;
-    overflow: auto;
-}
-
-.darkMode #navbar { background-color: var(--primaryDark); }
-
-#extraCol { width: 2rem; }
-
-/* Flexbox inside the navbar to put items wherever we need to */
-.navcontainer
-{
-    margin: 0;
-    padding: 0;
-    list-style: none;
-    display: flex;
-    align-items: center;
-    height: 100%;
-}
-
-.navitem { 
-    width: 100%; 
-    font-size: 1.2rem;
-}
-
-.navlink
-{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 5rem;
-    text-decoration: none;
-    color: var(--primary);
-    filter: grayscale(100%) opacity(0.7);
-    transition: 600ms ease;
-}
-
-.navlink svg
-{ 
-    min-width: 1.5rem;     
-    max-width: 2rem;
-}
-
-.navlink:hover { filter: grayscale(0%) opacity(1); }
-
-.linktext
-{ 
-    display: none; 
-    font-family: 'Roboto', sans-serif;
-    padding: 1rem;
-}       

@@ -7,6 +7,8 @@ The idea here is to display a short story I wrote in a webpage that is fairly re
   - Flexboxes
   - Grids
   - Media Queries 
+    - Different layouts for smaller screens
+    - Hover for touch screen disabled
   - Transition Animations
   - Clean scrolling
 - Pure JS
@@ -18,5 +20,4 @@ The idea here is to display a short story I wrote in a webpage that is fairly re
   - SPA
     - Fetches chapters as md files and parses them to text
 # Next Up
-- Remember scroll position
 - Massive white space on the right in landscape is bothering me. (I put a column there to put something there later)
