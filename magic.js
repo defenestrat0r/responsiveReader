@@ -1,7 +1,7 @@
 /* Page Load events */
 /* 'Load' event fires late, so we're using DOMContentLoaded */
 document.addEventListener('DOMContentLoaded', () => {
-    
+
     /* -----Variables----- */
     /* Story elements */
     const chapters = ['#ch1', '#ch2', '#ch3',].map(i => document.querySelector(i));
@@ -16,17 +16,24 @@ document.addEventListener('DOMContentLoaded', () => {
     const chButtons = [ '#ch1-btn', '#ch2-btn', '#ch3-btn',].map(i => document.querySelector(i));
     const dark = document.querySelector("#darkMode-btn");
     
+    /* -----Load chapters----- */
+    chapters.forEach( (element, index) => {
+        fetch(`https://raw.githubusercontent.com/defenestrat0r/responsiveReader/master/ch${index+1}.md`) 
+        .then(response => response.text())
+        .then(result => chapters[index].innerHTML = marked(result));
+    });
+    
     /* -----Event Listeners----- */
     /* Expand navbar */
     /* The toggle class function is awesome, btw. */
     document.querySelector("#navExpand").addEventListener("click", () => { navbar.classList.toggle("navbarExtended"); });
-
+    
     /* Dark Mode */
     dark.addEventListener("click", sepulchre);
     /* Activates dark mode if user has it set as preferred theme */
     if(window.matchMedia('(prefers-color-scheme: dark)').matches) { sepulchre(); }
-
-    /* "Load" chapters */
+    
+    /* This shows and hides chapters based on what button you click */
     /* God I'm loving anonymous functions and loops */
     /* Also the spacing and braces are on purpose. I know I can turn it into a single line, but ew. */
     chButtons.forEach( function (element, index) 
