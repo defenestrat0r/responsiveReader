@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const dark = document.querySelector("#darkMode-btn");
     
     /* -----Load chapters----- */
-    chapters.forEach( (element, index) => {
+    chapters.forEach( (_element, index) => {
         fetch(`https://raw.githubusercontent.com/defenestrat0r/responsiveReader/master/ch${index+1}.md`) 
         .then(response => response.text())
         .then(result => chapters[index].innerHTML = marked(result));
@@ -36,10 +36,8 @@ document.addEventListener('DOMContentLoaded', () => {
     /* This shows and hides chapters based on what button you click */
     /* God I'm loving anonymous functions and loops */
     /* Also the spacing and braces are on purpose. I know I can turn it into a single line, but ew. */
-    chButtons.forEach( function (element, index) 
-    { 
-        element.addEventListener("click", () => 
-        { 
+    chButtons.forEach( (element, index) => { 
+        element.addEventListener("click", () => { 
             blink(chapters[index]); 
         });
     });
