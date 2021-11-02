@@ -8,15 +8,15 @@ The idea here is to display a short story I wrote in a webpage that is fairly re
   - Grids
   - Media Queries 
   - Transition Animations
+  - Clean scrolling
 - Pure JS
   - Change chapters when navbar buttons are pressed! (Currently just show / hide)
   - Expand navbar and change its style when clicked (Toggle function)
   - Dark Mode! 
     - Query user preference for theme and toggle it automatically on page load ('prefers-color-scheme')
   - Title page for when load instead of immediately landing on Chapter 1 (currently on a separate branch because ugly)
+  - SPA
+    - Fetches chapters as md files and parses them to text
 # Next Up
-- Single Page Application
-  - Load text / chapters from a markdown file (Fetch)
-  - Look into using async-await for the same
 - Remember scroll position
 - Massive white space on the right in landscape is bothering me. (I put a column there to put something there later)
