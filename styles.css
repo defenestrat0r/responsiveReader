@@ -65,14 +65,23 @@ body::-webkit-scrollbar-thumb { background: var(--primary); }
     grid-area: cont;
 }
 
-/* Hide all content on load, so we can manipulate using javascript */
-#content > div { display: none; }
-
-/* Restricts text to 80 characters across so it's not hard for eyes to scan on a wide monitor */
-div[id^=ch] 
+/* Clamp is awesome */
+/* Basically, the min is 45 characters in a line, and the max is 75
+ * Preferred is 55% of the element as long as its between 45 and 75
+ * This makes it resize and reorder very effectively based on screen size  
+ */
+.chapter 
 { 
-    max-width: 90ch; 
+    display: none;
+    width: clamp(45ch, 55%, 75ch); 
     font-size: 1.1rem;
+}
+
+.contentainer
+{
+    display: flex;
+    justify-content: center;
+    width: auto;
 }
 
 /* Fixed navigation sidebar that stays where it is on the screen no matter how far you scroll */
@@ -131,6 +140,7 @@ div[id^=ch]
     font-family: 'Roboto', sans-serif;
     padding: 1rem;
 }
+
 
 /* Small Screens */ 
 @media only screen and (max-width:1140px) 
