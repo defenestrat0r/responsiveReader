@@ -10,7 +10,8 @@ The idea here is to display a short story I wrote in a webpage that is fairly re
     - Different layouts for smaller screens
     - Hover for touch screen disabled
   - Transition Animations
-  - Clean scrolling
+  - Smooth scrolling
+  - Clamp, for nice responsively scaling text
 - Pure JS
   - Change chapters when navbar buttons are pressed! (Currently just show / hide)
   - Expand navbar and change its style when clicked (Toggle function)
